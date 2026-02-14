@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>WasteNot — Analytics</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<header>Analytics</header>
+
+<div class="container" style="grid-template-columns: 1fr;">
+  <div class="form-box">
+    <h2>Overview</h2>
+    <div style="display:flex;gap:12px;flex-wrap:wrap">
+      <div style="flex:1">
+        <canvas id="catChart"></canvas>
+      </div>
+      <div style="flex:1">
+        <canvas id="expiryChart"></canvas>
+      </div>
+    </div>
+    <div style="margin-top:14px">
+      <button onclick="location.href='index.html'">Back</button>
+      <button id="exportCsv">Export CSV</button>
+    </div>
+  </div>
+</div>
+
+<script src="scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>WasteNot — Add & Scan</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- QR & charts libs -->
+  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.0/build/qrcode.min.js"></script>
+  <script src="https://unpkg.com/html5-qrcode@2.3.8"></script>
+</head>
+<body>
+<header>WasteNot — Add / Scan</header>
+
+<div class="top-controls">
+  <div class="search-filter">
+    <input id="searchText" placeholder="Search items (name)..." />
+    <select id="filterCategory"><option value="">All categories</option></select>
+    <select id="filterStorage"><option value="">All storage</option></select>
+    <select id="sortBy">
+      <option value="newest">Newest</option>
+      <option value="expirySoon">Expiry (soonest)</option>
+      <option value="name">Name A→Z</option>
+      <option value="daysLeft">Days left</option>
+    </select>
+    <button id="clearFilters">Clear</button>
+  </div>
+
+  <div class="nav-links">
+    <button id="goAnalytics">Analytics</button>
+    <button id="viewCartBtn">View Added Items</button>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="form-box">
+    <h2>Add Item</h2>
+
+    <input id="itemName" placeholder="Item name (e.g. Milk)">
+    <div class="suggest-row">
+      <div id="suggestText" class="suggestion"></div>
+      <button id="applySuggest" class="small" style="display:none">Apply</button>
+    </div>
+
+    <label class="small-label">Expiry date (optional)</label>
+    <input id="expiry" type="date">
+
+    <label class="small-label">Pickup address / location (optional)</label>
+    <input id="location" placeholder="e.g. 221B Baker St, London">
+
+    <select id="category">
+      <option>Fruits</option>
+      <option>Vegetables</option>
+      <option>Dairy</option>
+      <option>Snacks</option>
+      <option>Beverages</option>
+      <option>Other</option>
+    </select>
+
+    <select id="storage">
+      <option>Fridge</option>
+      <option>Freezer</option>
+      <option>Pantry</option>
+      <option>Room Temp</option>
+    </select>
+
+    <button id="addBtn">Add Item</button>
+    <div style="height:8px"></div>
+    <button id="generateSampleQr">Generate QR (Last Item)</button>
+  </div>
+
+  <div class="items-box">
+    <h2>Recently Added</h2>
+    <div id="itemsList" class="recent-list"></div>
+  </div>
+
+</div>
+
+<div id="popup">Item added</div>
+
+<div class="bottom-menu">
+  <button id="scanBtn">Scan QR</button>
+  <button id="donationMap">Donation Map</button>
+</div>
+
+<!-- Scanner Modal -->
+<div id="scannerModal" class="modal">
+  <div class="modal-content">
+    <h3>Scan QR Code</h3>
+    <div id="reader" style="width:300px; height:260px"></div>
+    <div style="margin-top:10px">
+      <button id="closeScanner">Close</button>
+    </div>
+  </div>
+</div>
+
+<script src="scripts.js"></script>
+</body>
+</html>

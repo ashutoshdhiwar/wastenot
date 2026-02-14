@@ -1,0 +1,22 @@
+{
+  "items": [
+    {
+      "id": "min5g2k44c",
+      "name": "apple",
+      "category": "Fruits",
+      "storage": "Fridge",
+      "expiry": "2026-01-07",
+      "location": "pune",
+      "createdAt": 1764593562100
+    },
+    {
+      "id": "mio684yvgz",
+      "name": "paneer",
+      "category": "Dairy",
+      "storage": "Fridge",
+      "expiry": "2026-01-10",
+      "location": "pune",
+      "createdAt": 1764655337767
+    }
+  ]
+}
